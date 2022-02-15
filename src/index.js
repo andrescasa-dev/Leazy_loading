@@ -1,6 +1,18 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { registerTarget } from "./observer";
+const API_URL = "https://randomfox.ca/images/";
 
-console.log('Happy hacking :)')
+const btn_addImage = document.getElementById('btn_addImage');
+const image_container = document.getElementById('images_container');
+
+function loadImage(){
+  //creating a img node
+  const img = document.createElement('img')
+  const randomNumber = Math.floor(Math.random() * 124);
+  img.src = `${API_URL}/${randomNumber}.jpg`;
+  img.alt = "a fox";
+  
+  //adding the node to the DOM
+  image_container.append(img);
+  registerTarget(img);
+}
+btn_addImage.addEventListener('click', loadImage);

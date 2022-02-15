@@ -1,3 +1,26 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+
+.images_container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 20px;
+}
+
+.images_container img{
+  width: 200px;
+}
+
+.btn{
+  margin-top: 20px;
+  background-color: blue;
+  border-radius: 10%;
+  color: white;
+}
+
+.btn:active{
+  background-color: rgb(2, 2, 105);
+}
