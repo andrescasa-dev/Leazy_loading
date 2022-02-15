@@ -4,10 +4,11 @@ function action(entryDisplayed){
   observer.unobserve(node);
 }
 
-
 const observer = new IntersectionObserver((entries)=>{
-  entries.filter(entry => entry.isIntersecting)
-  .forEach(entryDisplayed => action(entryDisplayed));
+  const entry = entries[0]; //there is always only one entry
+  if(entry.isIntersecting){
+    action(entry);
+  }
 });
 
 export const registerTarget = (target) => {
