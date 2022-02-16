@@ -1,13 +1,15 @@
-function action(entryDisplayed){
+function loadImage(entryDisplayed){
   console.log('I\'m watching you: ' + entryDisplayed);
-  const node = entryDisplayed.target;
-  observer.unobserve(node);
+  const img = entryDisplayed.target;
+  const src = img.dataset.src
+  img.src = src;
+  observer.unobserve(img);
 }
 
 const observer = new IntersectionObserver((entries)=>{
   const entry = entries[0]; //there is always only one entry
   if(entry.isIntersecting){
-    action(entry);
+    loadImage(entry);
   }
 });
 
