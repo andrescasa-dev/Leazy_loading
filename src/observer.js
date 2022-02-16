@@ -1,9 +1,10 @@
 function loadImage(entryDisplayed){
   console.log('I\'m watching you: ' + entryDisplayed);
-  const img = entryDisplayed.target;
-  const src = img.dataset.src
+  const imgWrapper = entryDisplayed.target;
+  const img = imgWrapper.querySelector('img');
+  const src = img.dataset.src;
   img.src = src;
-  observer.unobserve(img);
+  observer.unobserve(imgWrapper);
 }
 
 const observer = new IntersectionObserver((entries)=>{

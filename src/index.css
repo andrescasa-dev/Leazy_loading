@@ -11,7 +11,9 @@
 }
 
 .images_container img{
-  width: 200px;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
 }
 
 .btn{
@@ -19,6 +21,7 @@
   background-color: blue;
   border-radius: 10%;
   color: white;
+  padding: 6px;
 }
 
 .btn:active{
