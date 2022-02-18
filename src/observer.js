@@ -1,10 +1,18 @@
+import { imgLoaded_ct, img_ct } from "./index";
+
 function loadImage(entryDisplayed){
-  console.log('I\'m watching you: ' + entryDisplayed);
   const imgWrapper = entryDisplayed.target;
   const img = imgWrapper.querySelector('img');
   const src = img.dataset.src;
   img.src = src;
   observer.unobserve(imgWrapper);
+  
+  //count loaded
+  imgLoaded_ct.add();
+
+  console.log(
+    `🌑 img requested: ${img_ct.getCount()}
+🟢 img loaded: ${imgLoaded_ct.getCount()}`);
 }
 
 const observer = new IntersectionObserver((entries)=>{
