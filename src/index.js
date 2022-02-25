@@ -18,8 +18,8 @@ function createImageWrapper(){
 
   //creating wrapper
   const imgWrapper = document.createElement('div');
-  imgWrapper.style.width = "300px"
-  imgWrapper.style.height = "300px"
+  imgWrapper.style.width = "250px"
+  imgWrapper.style.height = "250px"
   imgWrapper.style.borderRadius = "5px"
   imgWrapper.appendChild(img);
   imgWrapper.style.backgroundColor = "#6e6e6e6e";
