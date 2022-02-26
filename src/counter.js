@@ -15,4 +15,8 @@ export class ObjectCounter{
   getCount(){
     return this.itemToCount;
   }
+
+  reset(){
+    this.itemToCount = 0;
+  }
 }

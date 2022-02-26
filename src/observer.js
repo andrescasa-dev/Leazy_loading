@@ -1,4 +1,5 @@
-import { imgLoaded_ct, img_ct } from "./index";
+import { img_load_cnt, img_cnt, updateLblCounters } from "./index";
+
 
 function loadImage(entryDisplayed){
   const imgWrapper = entryDisplayed.target;
@@ -8,11 +9,8 @@ function loadImage(entryDisplayed){
   observer.unobserve(imgWrapper);
   
   //count loaded
-  imgLoaded_ct.add();
-
-  console.log(
-    `🌑 img requested: ${img_ct.getCount()}
-🟢 img loaded: ${imgLoaded_ct.getCount()}`);
+  img_load_cnt.add();
+  updateLblCounters();
 }
 
 const observer = new IntersectionObserver((entries)=>{
