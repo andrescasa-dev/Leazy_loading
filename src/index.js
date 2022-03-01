@@ -13,21 +13,21 @@ const lbl_cnt_request = document.getElementById('cnt_requested');
 const lbl_cnt_load = document.getElementById('cnt_load');
 
 
-
 function createImageWrapper(){
   //creating a img node
   const img = document.createElement('img')
   const randomNumber = Math.floor(Math.random() * (123)) + 1;
   img.dataset.src = `${API_URL}/${randomNumber}.jpg`;
-  img.alt = "a fox";
+
+  //creating load div
+  const div = document.createElement('div');
+  div.className = "load_circle";
 
   //creating wrapper
   const imgWrapper = document.createElement('div');
-  imgWrapper.style.width = "250px"
-  imgWrapper.style.height = "250px"
-  imgWrapper.style.borderRadius = "5px"
+  imgWrapper.className = "image_wrapper"
+  imgWrapper.appendChild(div);
   imgWrapper.appendChild(img);
-  imgWrapper.style.backgroundColor = "#6e6e6e6e";
   
   return imgWrapper;
 }
