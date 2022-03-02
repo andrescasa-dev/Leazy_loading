@@ -12,7 +12,6 @@ let images_container = document.getElementById('images_container');
 const lbl_cnt_request = document.getElementById('cnt_requested');
 const lbl_cnt_load = document.getElementById('cnt_load');
 
-
 function createImageWrapper(){
   //creating a img node
   const img = document.createElement('img')

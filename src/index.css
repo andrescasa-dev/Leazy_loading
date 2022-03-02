@@ -69,6 +69,13 @@ html{
 
 .main{
   display: grid;
+  grid-template-rows: max-content max-content max-content;
+  
+  min-height: 85vh;
+}
+
+.footer{
+  margin-block: 20px;
 }
 
 .images_container{
@@ -91,7 +98,7 @@ html{
   width: 250px;
   height: 250px;
   border-radius: 12px;
-  background-color: var(--color-third);
+  background: var(--color-third)
 }
 
 .load_circle{
@@ -102,7 +109,7 @@ html{
   height: 70px;
   border: 10px solid  ;
   border-radius: 50%;
-  border-color: var(--color-fourth);
+  border-color: var(--color-third);
   border-top-color: var(--color-primary);
   animation: spin 1s linear infinite;
 }
@@ -128,6 +135,7 @@ html{
   width: 150px;
   height: 40px;
   padding: 6px;
+  cursor: pointer;
 }
 
 .btn:active{

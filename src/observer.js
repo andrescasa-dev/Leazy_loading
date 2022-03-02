@@ -21,10 +21,15 @@ function loadImage(entryDisplayed){
 }
 
 const observer = new IntersectionObserver((entries)=>{
-  const entry = entries[0]; //there is always only one entry
-  if(entry.isIntersecting){
-    loadImage(entry);
-  }
+  //en el registro de 5 imagenes esto se ejecuta una unica vez
+  //yo creia que por cada llamado se creaba un observer
+  entries.forEach(
+    entry =>{
+      if(entry.isIntersecting){
+        loadImage(entry);
+      }
+    }
+  );
 });
 
 export const registerTarget = (target) => {
